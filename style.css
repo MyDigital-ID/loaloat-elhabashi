@@ -631,9 +631,9 @@ body.splash-active {
   align-items: center;
   justify-content: center;
   border-radius: 12px;
-  padding: 4px 12px;
+  padding: 6px 16px;
   transition: all 0.3s;
-  max-width: 260px;
+  max-width: 340px;
   margin: 0 auto;
 }
 
@@ -643,7 +643,7 @@ body.splash-active {
 .brand-banner {
   width: 100%;
   height: auto;
-  max-height: 52px;
+  max-height: 75px;
   object-fit: contain;
   filter: drop-shadow(0 2px 6px rgba(62, 31, 15, 0.12));
 }
@@ -763,27 +763,27 @@ main {
 .hero-accent {
   position: relative;
   display: inline-block;
-  font-family: var(--font-display);
+  font-family: var(--font-title);
+  font-weight: 900;
   background: linear-gradient(
     110deg,
-    #8B6E2E 0%,
-    #C9A961 20%,
-    #F5E5C0 35%,
-    #FFFFFF 45%,
-    #F5E5C0 55%,
-    #C9A961 70%,
-    #8B6E2E 100%
+    #E0C989 0%,
+    #F5E5C0 20%,
+    #FFE9A8 40%,
+    #FFF5D6 50%,
+    #FFE9A8 60%,
+    #F5E5C0 80%,
+    #E0C989 100%
   );
   background-size: 250% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   animation: goldShine 5s ease-in-out infinite;
-  filter: drop-shadow(0 3px 8px rgba(201, 169, 97, 0.4))
-          drop-shadow(0 0 20px rgba(245, 229, 192, 0.3));
+  filter: drop-shadow(0 3px 10px rgba(201, 169, 97, 0.6))
+          drop-shadow(0 0 28px rgba(245, 229, 192, 0.5));
   letter-spacing: 0.5px;
 }
-
 /* لمعة بتمر على النص */
 .hero-accent::after {
   content: attr(data-text);
