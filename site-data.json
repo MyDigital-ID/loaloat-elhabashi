@@ -1,0 +1,360 @@
+{
+  "config": {
+    "brand_ar": "مطاحن بن لؤلؤة الحبشي",
+    "tagline_ar": "الطعم الأصلي بالأسلوب العصري",
+    "about_ar": "من السبعينات... وإحنا بنصنع توليفة بن ليها أصل. تراث بنحافظ عليه، وجودة بتتكلم عن نفسها في كل فنجان. جرّبها... وسيب الطعم يتكلم.",
+    "whatsappNumber": "201220843400",
+    "phones": [
+      { "label": "توصيل", "number": "035925141" },
+      { "label": "شكاوى", "number": "01220843400" },
+      { "label": "جملة", "number": "01008640838" }
+    ],
+    "branches": [
+      {
+        "name": "الإبراهيمية",
+        "address": "66 ش بورسعيد - الإبراهيمية - الإسكندرية",
+        "mapUrl": "https://www.google.com/maps/search/?api=1&query=66+شارع+بورسعيد+الإبراهيمية+الإسكندرية"
+      },
+      {
+        "name": "العجمي",
+        "address": "الكيلو 17.5 طريق اسكندرية مطروح - أبو يوسف - العجمي",
+        "mapUrl": "https://www.google.com/maps/search/?api=1&query=الكيلو+17.5+طريق+اسكندرية+مطروح+أبو+يوسف+العجمي"
+      }
+    ],
+    "workingHours_ar": "يومياً من 9 صباحاً حتى 11 مساءً",
+    "rights_ar": "جميع الحقوق محفوظة لمطاحن بن لؤلؤة الحبشي"
+  },
+
+  "social": {
+    "facebook": "https://www.facebook.com/profile.php?id=100063938534827",
+    "messenger": "100063938534827",
+    "whatsapp": "https://wa.me/201220843400"
+  },
+
+  "roastLevels": [
+    { "name": "فاتح", "hex": "#D4A574" },
+    { "name": "وسط", "hex": "#8B5A3C" },
+    { "name": "غامق", "hex": "#3E1F0F" }
+  ],
+
+  "packingOptions": [
+    { "id": "kilo", "label": "عبوة كيلو", "icon": "📦" },
+    { "id": "half-half", "label": "نصين", "icon": "📦📦" },
+    { "id": "quarters", "label": "4 أرباع", "icon": "📦📦📦📦" }
+  ],
+
+  "featured": [
+    "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=900&q=85",
+    "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=900&q=85",
+    "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900&q=85",
+    "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=900&q=85",
+    "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=900&q=85",
+    "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=900&q=85",
+    "https://images.unsplash.com/photo-1521302200778-33500795e128?w=900&q=85",
+    "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=85"
+  ],
+
+  "offers": [
+    {
+      "id": "offer_demo_1",
+      "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=900&q=85",
+      "text": "اشتري كيلو توليفة بن تركي سادة وعليها 100 جرام بن هدية"
+    },
+    {
+      "id": "offer_demo_2",
+      "image": "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=900&q=85",
+      "text": "اشتري 2 كيلو توليفة بن سوبر وعليهم 200 جرام بن من اختيارك"
+    },
+    {
+      "id": "offer_demo_3",
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900&q=85",
+      "text": "عرض خاص: كيلو محوج + كيلو سادة بسعر مميز"
+    },
+    {
+      "id": "offer_demo_4",
+      "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=900&q=85",
+      "text": "اشتري كيلو توليفة بن بالبندق وعليها 100 جرام بن بالشوكولاتة"
+    },
+    {
+      "id": "offer_demo_5",
+      "image": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=900&q=85",
+      "text": "عرض خاص: 3 كيلو توليفة بن تركي سوبر بسعر الكيلوين"
+    }
+  ],
+
+  "categories": [
+    {
+      "id": "turkish-plain",
+      "icon": "☕",
+      "name_ar": "توليفة بن تركي سادة",
+      "desc_ar": "توليفة سادة من أجود أنواع حب البن تم اختيارها بعناية فائقة بضمان بن لؤلؤة الحبشي",
+      "homeImg": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=700&q=85",
+      "visible": true,
+      "isBestSeller": true,
+      "colors": ["فاتح", "وسط", "غامق"],
+      "products": [
+        {
+          "id": "tp1",
+          "name_ar": "توليفة بن تركي سادة",
+          "desc_ar": "توليفة سادة من أجود أنواع حب البن تم اختيارها بعناية فائقة بضمان بن لؤلؤة الحبشي",
+          "images": [
+            "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=900&q=85",
+            "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=85",
+            "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900&q=85"
+          ],
+          "colors": ["فاتح", "وسط", "غامق"],
+          "isBestSeller": true,
+          "sizes": [
+            { "label": "تمن", "price": 55, "offerPrice": 0 },
+            { "label": "ربع", "price": 110, "offerPrice": 0 },
+            { "label": "نص", "price": 220, "offerPrice": 0 },
+            { "label": "كيلو", "price": 440, "offerPrice": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "turkish-super",
+      "icon": "⭐",
+      "name_ar": "توليفة بن تركي سوبر",
+      "desc_ar": "توليفة سوبر من أجود أنواع حب البن تم اختيارها بعناية فائقة بضمان بن لؤلؤة الحبشي",
+      "homeImg": "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=700&q=85",
+      "visible": true,
+      "isBestSeller": true,
+      "colors": ["فاتح", "وسط", "غامق"],
+      "products": [
+        {
+          "id": "ts1",
+          "name_ar": "توليفة بن تركي سوبر",
+          "desc_ar": "توليفة سوبر من أجود أنواع حب البن تم اختيارها بعناية فائقة بضمان بن لؤلؤة الحبشي",
+          "images": [
+            "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=900&q=85",
+            "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900&q=85"
+          ],
+          "colors": ["فاتح", "وسط", "غامق"],
+          "isBestSeller": true,
+          "sizes": [
+            { "label": "تمن", "price": 75, "offerPrice": 0 },
+            { "label": "ربع", "price": 150, "offerPrice": 0 },
+            { "label": "نص", "price": 300, "offerPrice": 0 },
+            { "label": "كيلو", "price": 600, "offerPrice": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "turkish-mehawg",
+      "icon": "🌿",
+      "name_ar": "توليفة بن تركي محوج",
+      "desc_ar": "توليفة محوجة من أجود أنواع حب البن مع الهيل البلدي الأصلي بضمان بن لؤلؤة الحبشي",
+      "homeImg": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=700&q=85",
+      "visible": true,
+      "colors": ["فاتح", "وسط", "غامق"],
+      "products": [
+        {
+          "id": "tm1",
+          "name_ar": "توليفة بن تركي محوج",
+          "desc_ar": "توليفة محوجة من أجود أنواع حب البن مع الهيل البلدي الأصلي بضمان بن لؤلؤة الحبشي",
+          "images": [
+            "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900&q=85"
+          ],
+          "colors": ["فاتح", "وسط", "غامق"],
+          "sizes": [
+            { "label": "تمن", "price": 62, "offerPrice": 0 },
+            { "label": "ربع", "price": 125, "offerPrice": 0 },
+            { "label": "نص", "price": 250, "offerPrice": 0 },
+            { "label": "كيلو", "price": 500, "offerPrice": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "turkish-mehawg-super",
+      "icon": "🌟",
+      "name_ar": "توليفة بن تركي محوج سوبر",
+      "desc_ar": "توليفة محوجة سوبر من أجود أنواع حب البن مع الهيل البلدي الأصلي بضمان بن لؤلؤة الحبشي",
+      "homeImg": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=700&q=85",
+      "visible": true,
+      "colors": ["فاتح", "وسط", "غامق"],
+      "products": [
+        {
+          "id": "tms1",
+          "name_ar": "توليفة بن تركي محوج سوبر",
+          "desc_ar": "توليفة محوجة سوبر من أجود أنواع حب البن مع الهيل البلدي الأصلي بضمان بن لؤلؤة الحبشي",
+          "images": [
+            "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=900&q=85"
+          ],
+          "colors": ["فاتح", "وسط", "غامق"],
+          "sizes": [
+            { "label": "تمن", "price": 82, "offerPrice": 0 },
+            { "label": "ربع", "price": 163, "offerPrice": 0 },
+            { "label": "نص", "price": 325, "offerPrice": 0 },
+            { "label": "كيلو", "price": 650, "offerPrice": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flavored-chocolate",
+      "icon": "🍫",
+      "name_ar": "توليفة بن تركي بالشوكولاتة",
+      "desc_ar": "توليفة بن تركي بنكهة الشوكولاتة الفاخرة من أجود أنواع حب البن بضمان بن لؤلؤة الحبشي",
+      "homeImg": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=700&q=85",
+      "visible": true,
+      "colors": ["فاتح", "وسط", "غامق"],
+      "products": [
+        {
+          "id": "fc1",
+          "name_ar": "توليفة بن تركي بالشوكولاتة",
+          "desc_ar": "توليفة بن تركي بنكهة الشوكولاتة الفاخرة من أجود أنواع حب البن بضمان بن لؤلؤة الحبشي",
+          "images": [
+            "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=900&q=85"
+          ],
+          "colors": ["فاتح", "وسط", "غامق"],
+          "sizes": [
+            { "label": "تمن", "price": 69, "offerPrice": 0 },
+            { "label": "ربع", "price": 138, "offerPrice": 0 },
+            { "label": "نص", "price": 275, "offerPrice": 0 },
+            { "label": "كيلو", "price": 550, "offerPrice": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flavored-hazelnut",
+      "icon": "🌰",
+      "name_ar": "توليفة بن تركي بالبندق",
+      "desc_ar": "توليفة بن تركي بنكهة البندق الفاخر من أجود أنواع حب البن بضمان بن لؤلؤة الحبشي",
+      "homeImg": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=700&q=85",
+      "visible": true,
+      "colors": ["فاتح", "وسط", "غامق"],
+      "products": [
+        {
+          "id": "fh1",
+          "name_ar": "توليفة بن تركي بالبندق",
+          "desc_ar": "توليفة بن تركي بنكهة البندق الفاخر من أجود أنواع حب البن بضمان بن لؤلؤة الحبشي",
+          "images": [
+            "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=900&q=85"
+          ],
+          "colors": ["فاتح", "وسط", "غامق"],
+          "sizes": [
+            { "label": "تمن", "price": 75, "offerPrice": 0 },
+            { "label": "ربع", "price": 150, "offerPrice": 0 },
+            { "label": "نص", "price": 300, "offerPrice": 0 },
+            { "label": "كيلو", "price": 600, "offerPrice": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "espresso",
+      "icon": "⚡",
+      "name_ar": "توليفة بن إسبريسو",
+      "desc_ar": "توليفة إسبريسو احترافية من أجود أنواع حب البن تم تحميصها بعناية بضمان بن لؤلؤة الحبشي",
+      "homeImg": "https://images.unsplash.com/photo-1592663527359-0d5f7f7b8b8a?w=700&q=85",
+      "visible": true,
+      "isBestSeller": true,
+      "colors": ["وسط", "غامق"],
+      "products": [
+        {
+          "id": "esp1",
+          "name_ar": "توليفة بن إسبريسو",
+          "desc_ar": "توليفة إسبريسو احترافية من أجود أنواع حب البن تم تحميصها بعناية بضمان بن لؤلؤة الحبشي",
+          "images": [
+            "https://images.unsplash.com/photo-1592663527359-0d5f7f7b8b8a?w=900&q=85"
+          ],
+          "colors": ["وسط", "غامق"],
+          "isBestSeller": true,
+          "sizes": [
+            { "label": "تمن", "price": 125, "offerPrice": 0 },
+            { "label": "ربع", "price": 250, "offerPrice": 0 },
+            { "label": "نص", "price": 500, "offerPrice": 0 },
+            { "label": "كيلو", "price": 1000, "offerPrice": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flavored-vanilla",
+      "icon": "🍦",
+      "name_ar": "توليفة بن تركي بالفانيليا",
+      "desc_ar": "توليفة بن تركي بنكهة الفانيليا الفاخرة من أجود أنواع حب البن بضمان بن لؤلؤة الحبشي",
+      "homeImg": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=700&q=85",
+      "visible": true,
+      "colors": ["فاتح", "وسط", "غامق"],
+      "products": [
+        {
+          "id": "fv1",
+          "name_ar": "توليفة بن تركي بالفانيليا",
+          "desc_ar": "توليفة بن تركي بنكهة الفانيليا الفاخرة من أجود أنواع حب البن بضمان بن لؤلؤة الحبشي",
+          "images": [
+            "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=85"
+          ],
+          "colors": ["فاتح", "وسط", "غامق"],
+          "sizes": [
+            { "label": "تمن", "price": 71, "offerPrice": 0 },
+            { "label": "ربع", "price": 143, "offerPrice": 0 },
+            { "label": "نص", "price": 285, "offerPrice": 0 },
+            { "label": "كيلو", "price": 570, "offerPrice": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flavored-caramel",
+      "icon": "🍯",
+      "name_ar": "توليفة بن تركي بالكراميل",
+      "desc_ar": "توليفة بن تركي بنكهة الكراميل الفاخر من أجود أنواع حب البن بضمان بن لؤلؤة الحبشي",
+      "homeImg": "https://images.unsplash.com/photo-1521302200778-33500795e128?w=700&q=85",
+      "visible": true,
+      "colors": ["فاتح", "وسط", "غامق"],
+      "products": [
+        {
+          "id": "fcar1",
+          "name_ar": "توليفة بن تركي بالكراميل",
+          "desc_ar": "توليفة بن تركي بنكهة الكراميل الفاخر من أجود أنواع حب البن بضمان بن لؤلؤة الحبشي",
+          "images": [
+            "https://images.unsplash.com/photo-1521302200778-33500795e128?w=900&q=85"
+          ],
+          "colors": ["فاتح", "وسط", "غامق"],
+          "sizes": [
+            { "label": "تمن", "price": 73, "offerPrice": 0 },
+            { "label": "ربع", "price": 145, "offerPrice": 0 },
+            { "label": "نص", "price": 290, "offerPrice": 0 },
+            { "label": "كيلو", "price": 580, "offerPrice": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "placeholder-1",
+      "icon": "🫘",
+      "name_ar": "قسم جديد 1",
+      "desc_ar": "قسم قيد الإنشاء - يمكن تعديله من لوحة التحكم",
+      "homeImg": "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=700&q=85",
+      "visible": true,
+      "colors": ["فاتح", "وسط", "غامق"],
+      "products": []
+    },
+    {
+      "id": "placeholder-2",
+      "icon": "🫘",
+      "name_ar": "قسم جديد 2",
+      "desc_ar": "قسم قيد الإنشاء - يمكن تعديله من لوحة التحكم",
+      "homeImg": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=700&q=85",
+      "visible": true,
+      "colors": ["فاتح", "وسط", "غامق"],
+      "products": []
+    },
+    {
+      "id": "placeholder-3",
+      "icon": "🫘",
+      "name_ar": "قسم جديد 3",
+      "desc_ar": "قسم قيد الإنشاء - يمكن تعديله من لوحة التحكم",
+      "homeImg": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=700&q=85",
+      "visible": true,
+      "colors": ["فاتح", "وسط", "غامق"],
+      "products": []
+    }
+  ]
+}

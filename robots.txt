@@ -1,0 +1,14 @@
+# ============================================================
+# مطاحن بن لؤلؤة الحبشي — robots.txt
+# ============================================================
+
+User-agent: *
+Allow: /
+
+# صفحات ممنوعة من الفهرسة
+Disallow: /admin.html
+Disallow: /admin.js
+Disallow: /assets/uploads/
+
+# Sitemap
+Sitemap: https://mydigital-id.github.io/loaloat-elhabashi/sitemap.xml

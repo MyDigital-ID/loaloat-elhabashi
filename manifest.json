@@ -1,0 +1,78 @@
+{
+  "id": "./index.html",
+  "name": "مطاحن بن لؤلؤة الحبشي",
+  "short_name": "لؤلؤة الحبشي",
+  "description": "موقع بن لؤلؤة الحبشي من أجود أنواع البن في مصر - توليفات بن أصيلة من السبعينات",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F5EFE6",
+  "theme_color": "#3E1F0F",
+  "categories": [
+    "food",
+    "shopping",
+    "business"
+  ],
+  "icons": [
+    {
+      "src": "assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "الأقسام",
+      "short_name": "الأقسام",
+      "description": "تصفح أقسام البن",
+      "url": "./index.html#categories",
+      "icons": [
+        {
+          "src": "assets/images/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "عروض وخصومات",
+      "short_name": "العروض",
+      "description": "أحدث العروض",
+      "url": "./index.html#offers",
+      "icons": [
+        {
+          "src": "assets/images/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "اتصل بنا",
+      "short_name": "تواصل",
+      "description": "تواصل معنا",
+      "url": "./index.html#contact",
+      "icons": [
+        {
+          "src": "assets/images/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}

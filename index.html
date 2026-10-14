@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta name="theme-color" content="#3E1F0F">
+    
+    <!-- SEO -->
+    <title>موقع بن لؤلؤة الحبشي | من أجود أنواع البن في مصر</title>
+    <meta name="description" content="موقع بن لؤلؤة الحبشي من أجود أنواع البن في مصر. توليفات بن أصيلة من السبعينات - سادة، محوج، سوبر، بنكهات متعددة. الطعم الأصلي بالأسلوب العصري.">
+    <meta name="keywords" content="بن لؤلؤة الحبشي, أجود أنواع البن, بن مصري, توليفة بن, قهوة تركي, بن محوج, بن سادة, بن سوبر, بن بنكهات, مطاحن بن, قهوة مصرية, بن اسكندرية, قهوة تركية">
+    <meta name="author" content="مطاحن بن لؤلؤة الحبشي">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="موقع بن لؤلؤة الحبشي من أجود أنواع البن في مصر">
+    <meta property="og:description" content="توليفات بن أصيلة من السبعينات - سادة، محوج، سوبر، بنكهات متعددة. الطعم الأصلي بالأسلوب العصري.">
+    <meta property="og:image" content="assets/images/banner.jpg">
+    <meta property="og:locale" content="ar_EG">
+    <meta property="og:site_name" content="مطاحن بن لؤلؤة الحبشي">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="موقع بن لؤلؤة الحبشي من أجود أنواع البن في مصر">
+    <meta name="twitter:description" content="توليفات بن أصيلة من السبعينات - سادة، محوج، سوبر، بنكهات متعددة.">
+    <meta name="twitter:image" content="assets/images/banner.jpg">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/images/icon-192.png">
+    <link rel="icon" type="image/png" href="assets/images/icon-192.png">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "مطاحن بن لؤلؤة الحبشي",
+      "description": "موقع بن لؤلؤة الحبشي من أجود أنواع البن في مصر - توليفات بن أصيلة من السبعينات",
+      "image": "assets/images/banner.jpg",
+      "telephone": "+201220843400",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "66 ش بورسعيد - الإبراهيمية - الإسكندرية",
+        "addressLocality": "الإسكندرية",
+        "addressCountry": "EG"
+      },
+      "openingHours": "Mo-Su 09:00-23:00",
+      "priceRange": "$$",
+      "servesCuisine": "Coffee",
+      "url": "https://mydigital-id.github.io/loaloat-elhabashi/"
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&family=Lalezar&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="splash-active">
+
+    <!-- ============================================================
+         SPLASH SCREEN
+    ============================================================ -->
+    <div class="splash-screen" id="splashScreen">
+        <!-- خلفية: نفس الفيديو مغبّش لملء الحواف بدون قص الفيديو الأصلي -->
+        <video
+            class="splash-video-bg"
+            id="splashVideoBg"
+            src="assets/images/splash.mp4"
+            poster="assets/images/splash-poster.jpg"
+            muted
+            playsinline
+            preload="auto"
+            autoplay
+            aria-hidden="true"
+            tabindex="-1">
+        </video>
+
+        <!-- الفيديو الأساسي: يظهر كامل بنسبته الأصلية (بدون قص) -->
+        <video
+            class="splash-video"
+            id="splashVideo"
+            src="assets/images/splash.mp4"
+            poster="assets/images/splash-poster.jpg"
+            muted
+            playsinline
+            preload="auto"
+            autoplay>
+        </video>
+    </div>
+
+    <!-- OVERLAY -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ============================================================
+         SIDE MENU
+    ============================================================ -->
+    <aside class="side-menu" id="sideMenu">
+        <button class="icon-btn close-btn" id="closeMenuBtn" aria-label="إغلاق">✕</button>
+
+        <nav class="side-nav">
+            <!-- عن لؤلؤة الحبشي — في الأعلى -->
+            <div class="side-about-block">
+                <h3 class="side-about-title">عن لؤلؤة الحبشي</h3>
+                <p class="side-about-text">من السبعينات... وإحنا بنصنع توليفة بن ليها أصل. تراث بنحافظ عليه، وجودة بتتكلم عن نفسها في كل فنجان.</p>
+                <p class="side-motto">الطعم الأصلي بالأسلوب العصري ☕</p>
+            </div>
+
+            <div class="side-divider"></div>
+
+            <a href="#" class="side-link" data-nav="home">🏠 الرئيسية</a>
+            <a href="#categories" class="side-link" data-nav="categories">📂 الأقسام</a>
+            <a href="#best-sellers" class="side-link" data-nav="best">⭐ الأكثر مبيعًا</a>
+            <a href="#offers" class="side-link" data-nav="offers">🔥 عروض وخصومات</a>
+            <a href="#" class="side-link side-link-toggle" data-nav="branches" id="sideBranchesToggle" aria-expanded="false" aria-controls="sideBranches">
+                <span>📍 فروعنا</span>
+                <span class="side-chevron" aria-hidden="true">‹</span>
+            </a>
+            <div class="side-branches" id="sideBranches" aria-hidden="true"></div>
+            <a href="#contact" class="side-link" data-nav="contact">📞 اتصل بنا</a>
+        </nav>
+
+        <div class="side-box">
+            <div class="side-title">📞 أرقام التواصل</div>
+            <div id="sidePhones"></div>
+            <a href="#" class="wa-link" id="sideWhatsapp">💬 اطلب عبر واتساب</a>
+        </div>
+    </aside>
+
+    <!-- ============================================================
+         CART DRAWER
+    ============================================================ -->
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>🛒 سلة الطلبات</h3>
+            <div class="cart-header-actions" id="cartHeaderActions">
+                <button class="icon-btn" id="closeCartBtn" aria-label="إغلاق">✕</button>
+            </div>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">السلة فاضية</p>
+        </div>
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-total">
+                <span>الإجمالي</span>
+                <span id="cartTotal">0 ج.م</span>
+            </div>
+            <button class="cta-btn" id="checkoutBtn">إتمام الطلب</button>
+        </div>
+    </aside>
+
+    <!-- ============================================================
+         HEADER
+    ============================================================ -->
+    <header class="site-header">
+        <div class="header-row">
+
+            <button class="icon-btn menu-btn" id="menuBtn" aria-label="القائمة">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <div class="brand" id="brandBtn">
+                <img src="assets/images/banner.jpg" alt="مطاحن بن لؤلؤة الحبشي" class="brand-banner">
+            </div>
+
+            <button class="icon-btn cart-btn" id="cartBtn" aria-label="السلة">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+
+        </div>
+    </header>
+
+    <!-- ============================================================
+         MAIN CONTENT
+    ============================================================ -->
+    <main>
+
+        <section class="view" id="view-home">
+
+            <!-- HERO -->
+            <div class="hero">
+                <div class="hero-content">
+                    <p class="hero-kicker">من السبعينات</p>
+                    <h1 class="hero-title">
+                        أصالة الطعم<br>
+                        <span class="hero-accent" data-text="توليفة بن لؤلؤة الحبشي">توليفة بن لؤلؤة الحبشي</span>
+                    </h1>
+                    <p class="hero-tagline">الطعم الأصلي بالأسلوب العصري ☕</p>
+                    <button class="hero-cta" id="heroCta">
+                        <span class="hero-cta-text">تسوق الآن</span>
+                        <svg class="hero-cta-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- FEATURED SLIDER -->
+            <section class="home-section" id="featuredSection">
+                <div class="section-head">
+                    <h2 class="section-title">
+                        <span class="section-icon">📸</span>
+                        صور مميزة
+                    </h2>
+                </div>
+                <div class="slider-wrap swiper" id="featuredSlider">
+                    <div class="swiper-wrapper" id="featuredTrack"></div>
+                    <div class="slider-dots" id="featuredDots"></div>
+                </div>
+            </section>
+
+            <!-- BEST SELLERS -->
+            <section class="home-section" id="best-sellers">
+                <div class="section-head">
+                    <h2 class="section-title">
+                        <span class="section-icon">⭐</span>
+                        الأكثر مبيعًا
+                    </h2>
+                </div>
+                <div class="row-track" id="bestTrack"></div>
+            </section>
+
+            <!-- CATEGORIES -->
+            <section class="home-section" id="categories">
+                <div class="section-head">
+                    <h2 class="section-title">
+                        <span class="section-icon">📂</span>
+                        الأقسام
+                    </h2>
+                </div>
+                <div class="cats-grid" id="catsGrid"></div>
+            </section>
+
+            <!-- OFFERS -->
+            <section class="home-section" id="offers">
+                <div class="section-head">
+                    <h2 class="section-title">
+                        <span class="section-icon">🔥</span>
+                        عروض وخصومات
+                    </h2>
+                </div>
+                <div class="slider-wrap swiper" id="offersSlider">
+                    <div class="swiper-wrapper" id="offersTrack"></div>
+                    <div class="slider-dots" id="offersDots"></div>
+                </div>
+                <p class="empty-note" id="offersEmpty" style="display:none;">لا توجد عروض حالياً — تابعنا قريبًا</p>
+            </section>
+
+        </section>
+
+        <!-- ============ VIEW: CATEGORY ============ -->
+        <section class="view hidden" id="view-category">
+            <button class="back-btn" id="backBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+                رجوع للرئيسية
+            </button>
+            <h2 class="category-title" id="catTitle">اسم القسم</h2>
+            <div class="products-list" id="productsList"></div>
+        </section>
+
+    </main>
+
+    <!-- ============================================================
+         BOTTOM NAV
+    ============================================================ -->
+    <nav class="bottom-nav">
+        <button class="bn-btn" data-nav="home">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            الرئيسية
+        </button>
+        <button class="bn-btn" data-nav="back">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            رجوع
+        </button>
+        <button class="bn-btn bn-cart" id="bottomCartBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            السلة
+            <span class="cart-count-bottom" id="cartCountBottom">0</span>
+        </button>
+    </nav>
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="site-footer" id="contact">
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <img src="assets/images/banner.jpg" alt="مطاحن بن لؤلؤة الحبشي" class="footer-banner">
+                <p class="footer-tag">الطعم الأصلي بالأسلوب العصري</p>
+            </div>
+
+            <div class="footer-line" id="footerInfo">
+                <div id="footerPhones"></div>
+                <div id="footerHours"></div>
+            </div>
+
+            <div class="footer-social" id="footerSocial"></div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <a href="https://mydigital-id.github.io" target="_blank" rel="noopener" class="fingerprint-link" title="mydigital-id.github.io" aria-label="mydigital-id.github.io">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 0 0 8 11a4 4 0 1 1 8 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0 0 15.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 0 0 8 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path>
+                </svg>
+            </a>
+            <span id="footerRights">جميع الحقوق محفوظة لمطاحن بن لؤلؤة الحبشي</span>
+        </div>
+    </footer>
+
+    <!-- INSTALL BANNER -->
+    <div class="install-banner" id="installBanner" role="dialog" aria-live="polite" aria-label="تثبيت التطبيق" hidden>
+        <img src="assets/images/icon-192.png" alt="" class="install-icon" width="48" height="48">
+        <div class="install-body">
+            <div class="install-title">تثبيت تطبيق بن لؤلؤة الحبشي الآن</div>
+            <div class="install-hint" id="installHint" hidden></div>
+            <div class="install-actions">
+                <button type="button" class="install-btn install-yes" id="installYes">تثبيت الآن</button>
+                <button type="button" class="install-btn install-later" id="installLater">لاحقاً</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAV TOAST -->
+    <div class="nav-toast" id="navToast"></div>
+
+    <!-- CLIPBOARD TOAST -->
+    <div class="clipboard-toast" id="clipboardToast"></div>
+
+    <!-- ============================================================
+         SCRIPTS
+    ============================================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="site-data-loader.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // شبكة أمان: لو حصل أي خطأ يمنع السكريبت الرئيسي، الـ splash مايفضلش عالق
+        setTimeout(function () {
+            var sp = document.getElementById('splashScreen');
+            if (sp && !sp.classList.contains('hide')) {
+                sp.classList.add('hide');
+                document.body.classList.remove('splash-active');
+                setTimeout(function () { sp.style.display = 'none'; }, 1000);
+            }
+        }, 20000);
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(reg => console.log('✅ SW registered:', reg.scope))
+                    .catch(err => console.warn('⚠️ SW registration failed:', err));
+            });
+        }
+    </script>
+
+</body>
+</html>
