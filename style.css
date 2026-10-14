@@ -85,23 +85,13 @@ input:focus-visible {
 ::selection { background: var(--gold); color: var(--coffee); }
 
 /* ============================================================
-   SPLASH SCREEN — الفيديو كامل بدون قص + خلفية مغبّشة لملء الحواف
+   SPLASH SCREEN
 ============================================================ */
-body.splash-active {
-  overflow: hidden;
-  touch-action: none;
-}
-
 .splash-screen {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100vh;   /* fallback */
-  height: 100dvh;  /* الارتفاع الفعلي المرئي — بدون ما شريط الـ URL يغطي حاجة */
+  inset: 0;
   z-index: 9999;
-  background: #2a1208;
+  background: var(--pearl);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -114,30 +104,106 @@ body.splash-active {
   pointer-events: none;
 }
 
-/* الخلفية المغبّشة (نفس الفيديو متكبّر ومغبّش) */
-.splash-video-bg {
+.splash-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash-video {
   position: absolute;
-  top: -6%;
-  left: -6%;
-  width: 112%;
-  height: 112%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  filter: blur(26px) saturate(1.1) brightness(0.85);
-  z-index: 1;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.splash-video.playing { opacity: 1; }
+.splash-video.done { opacity: 0; }
+
+.splash-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--pearl);
+  z-index: 2;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.splash-bg.show { opacity: 1; }
+
+.splash-wave {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
   pointer-events: none;
 }
 
-/* الفيديو الأساسي: كامل بنسبته الأصلية، من غير أي قص أو تمطيط */
-.splash-video {
-  position: absolute;
-  top: 0;
-  left: 0;
+.wave-1 {
+  width: 70vmax;
+  height: 70vmax;
+  top: -25vmax;
+  right: -25vmax;
+  background: radial-gradient(circle, rgba(201, 169, 97, 0.22), transparent 65%);
+  animation: floatWave 16s ease-in-out infinite;
+}
+
+.wave-2 {
+  width: 60vmax;
+  height: 60vmax;
+  bottom: -20vmax;
+  left: -20vmax;
+  background: radial-gradient(circle, rgba(139, 90, 60, 0.15), transparent 65%);
+  animation: floatWave 20s ease-in-out infinite reverse;
+}
+
+.wave-3 {
+  width: 50vmax;
+  height: 50vmax;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(245, 239, 230, 0.7), transparent 70%);
+  animation: pulseWave 10s ease-in-out infinite;
+}
+
+@keyframes floatWave {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(5vmax, 4vmax) scale(1.15); }
+}
+
+@keyframes pulseWave {
+  0%, 100% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+}
+
+.splash-logo-wrap {
+  position: relative;
+  z-index: 4;
+  max-width: 88%;
+  width: 580px;
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+  transition: opacity 1.2s ease, transform 1.4s cubic-bezier(0.2, 1.2, 0.4, 1);
+}
+
+.splash-logo-wrap.show {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.splash-logo {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  z-index: 2;
-  background: transparent;
+  height: auto;
+  border-radius: var(--radius);
+  filter: drop-shadow(0 24px 60px rgba(62, 31, 15, 0.28));
 }
 
 /* ============================================================
@@ -167,7 +233,6 @@ body.splash-active {
   width: 340px;
   max-width: 88vw;
   height: 100vh;
-  height: 100dvh;
   background: var(--pearl-soft);
   border-left: 1px solid var(--pearl-deep);
   z-index: 300;
@@ -340,7 +405,6 @@ body.splash-active {
   width: 410px;
   max-width: 94vw;
   height: 100vh;
-  height: 100dvh;
   background: var(--pearl-soft);
   border-right: 1px solid var(--pearl-deep);
   z-index: 300;
@@ -582,18 +646,33 @@ body.splash-active {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--pearl-deep);
-  padding: 10px 16px;
+  padding: 0;
   box-shadow: 0 2px 16px rgba(62, 31, 15, 0.05);
 }
 
 .header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 12px;
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
 }
+
+/* زر القائمة والسلة فوق البانر (في المناطق الفاضية من الزخرفة) */
+.header-row .menu-btn,
+.header-row .cart-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(245, 239, 230, 0.55);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+.header-row .menu-btn { right: 8px; }
+.header-row .cart-btn { left: 8px; }
+.header-row .menu-btn:active,
+.header-row .cart-btn:active { transform: translateY(-50%) scale(0.94); }
 
 .icon-btn {
   background: transparent;
@@ -625,27 +704,29 @@ body.splash-active {
 }
 
 .brand {
-  flex: 1;
+  width: 100%;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  padding: 6px 16px;
-  transition: all 0.3s;
-  max-width: 340px;
-  margin: 0 auto;
+  display: block;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  transition: opacity 0.3s;
 }
 
-.brand:hover { background: rgba(201, 169, 97, 0.08); }
-.brand:active { transform: scale(0.98); }
+.brand:hover { opacity: 0.95; }
+.brand:active { opacity: 0.9; }
 
 .brand-banner {
+  display: block;
   width: 100%;
   height: auto;
-  max-height: 75px;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 6px rgba(62, 31, 15, 0.12));
+  max-height: none;
+  object-fit: cover;
+  filter: none;
+}
+
+@media (min-width: 700px) {
+  .brand-banner { max-width: 640px; margin: 0 auto; }
 }
 
 .cart-btn { position: relative; }
@@ -763,27 +844,27 @@ main {
 .hero-accent {
   position: relative;
   display: inline-block;
-  font-family: var(--font-title);
-  font-weight: 900;
+  font-family: var(--font-display);
   background: linear-gradient(
     110deg,
-    #E0C989 0%,
-    #F5E5C0 20%,
-    #FFE9A8 40%,
-    #FFF5D6 50%,
-    #FFE9A8 60%,
-    #F5E5C0 80%,
-    #E0C989 100%
+    #8B6E2E 0%,
+    #C9A961 20%,
+    #F5E5C0 35%,
+    #FFFFFF 45%,
+    #F5E5C0 55%,
+    #C9A961 70%,
+    #8B6E2E 100%
   );
   background-size: 250% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   animation: goldShine 5s ease-in-out infinite;
-  filter: drop-shadow(0 3px 10px rgba(201, 169, 97, 0.6))
-          drop-shadow(0 0 28px rgba(245, 229, 192, 0.5));
+  filter: drop-shadow(0 3px 8px rgba(201, 169, 97, 0.4))
+          drop-shadow(0 0 20px rgba(245, 229, 192, 0.3));
   letter-spacing: 0.5px;
 }
+
 /* لمعة بتمر على النص */
 .hero-accent::after {
   content: attr(data-text);
@@ -2137,7 +2218,6 @@ main {
   .cart-drawer { width: 100%; max-width: 100%; }
   .cat-card-ar { font-size: 0.92rem; }
   .bn-btn { padding: 11px 16px; font-size: 0.85rem; gap: 6px; }
-  .brand-banner { max-height: 42px; }
   .footer-banner { max-width: 220px; }
   .branch-card { padding: 22px 20px; }
   .branch-icon { width: 52px; height: 52px; font-size: 1.4rem; }
@@ -2153,199 +2233,3 @@ main {
     scroll-behavior: auto !important;
   }
 }
-
-/* ============================================================
-   فروعنا داخل القائمة الجانبية
-============================================================ */
-.side-link-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.side-chevron {
-  display: inline-block;
-  font-size: 1.3rem;
-  line-height: 1;
-  transition: transform 0.3s ease;
-  color: var(--gold-dark);
-}
-
-.side-link-toggle.open .side-chevron { transform: rotate(-90deg); }
-
-.side-branches {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 0 6px;
-}
-
-.side-branches.open {
-  max-height: 1200px;
-  opacity: 1;
-  margin: 4px 0 10px;
-}
-
-.side-branch {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-areas:
-    "pin info"
-    "go  go";
-  gap: 6px 10px;
-  align-items: center;
-  background: var(--pearl);
-  border: 1px solid var(--pearl-deep);
-  border-right: 3px solid var(--gold);
-  border-radius: var(--radius-sm);
-  padding: 12px 14px;
-  transition: background 0.25s, border-color 0.25s;
-}
-
-.side-branch:hover { background: rgba(201, 169, 97, 0.15); }
-
-.side-branch-pin { grid-area: pin; font-size: 1.2rem; }
-
-.side-branch-info {
-  grid-area: info;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.side-branch-name {
-  font-family: var(--font-title);
-  font-weight: 900;
-  font-size: 0.98rem;
-  color: var(--coffee);
-}
-
-.side-branch-address {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--text-soft);
-  line-height: 1.55;
-}
-
-.side-branch-go {
-  grid-area: go;
-  justify-self: start;
-  font-family: var(--font-title);
-  font-weight: 900;
-  font-size: 0.82rem;
-  color: var(--gold-deep);
-}
-
-.side-branch-empty {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  padding: 8px 14px;
-}
-
-/* ============================================================
-   رسالة تثبيت التطبيق
-============================================================ */
-.install-banner {
-  position: fixed;
-  left: 12px;
-  right: 12px;
-  bottom: calc(86px + env(safe-area-inset-bottom, 0px));
-  z-index: 500;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: var(--pearl-soft);
-  border: 2px solid var(--gold);
-  border-radius: var(--radius);
-  padding: 14px 16px;
-  box-shadow: var(--shadow-lg);
-  max-width: 520px;
-  margin: 0 auto;
-  transform: translateY(30px);
-  opacity: 0;
-  transition: transform 0.35s ease, opacity 0.35s ease;
-}
-
-.install-banner[hidden] { display: none; }
-
-.install-banner.show {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.install-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  flex-shrink: 0;
-  box-shadow: var(--shadow-sm);
-}
-
-.install-body { flex: 1; min-width: 0; }
-
-.install-title {
-  font-family: var(--font-title);
-  font-weight: 900;
-  font-size: 0.98rem;
-  color: var(--coffee);
-  line-height: 1.5;
-}
-
-.install-hint {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--text-soft);
-  margin-top: 4px;
-  line-height: 1.55;
-}
-
-.install-hint[hidden] { display: none; }
-
-.install-actions {
-  display: flex;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.install-btn {
-  font-family: var(--font-title);
-  font-weight: 900;
-  font-size: 0.88rem;
-  padding: 9px 18px;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.install-btn[hidden] { display: none; }
-.install-btn:active { transform: scale(0.96); }
-
-.install-yes {
-  background: linear-gradient(135deg, var(--coffee), var(--coffee-soft));
-  color: var(--pearl);
-}
-
-.install-later {
-  background: var(--pearl-deep);
-  color: var(--coffee);
-}
-
-/* ============================================================
-   بديل السلايدر لو مكتبة Swiper مش متاحة (أوفلاين أول مرة)
-============================================================ */
-.slider-wrap.no-swiper .swiper-wrapper {
-  display: flex;
-  gap: 14px;
-  overflow-x: auto;
-  padding: 0 16px 12px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-
-.slider-wrap.no-swiper .slider-item { scroll-snap-align: center; }
-.slider-wrap.no-swiper .slider-dots { display: none; }
