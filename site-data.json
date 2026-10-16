@@ -132,15 +132,15 @@
             "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900&q=85"
           ],
           "colors": [
-            "فاتح",
             "وسط",
+            "فاتح",
             "غامق"
           ],
           "isBestSeller": true,
           "sizes": [
             {
               "label": "تمن",
-              "price": 55,
+              "price": 60,
               "offerPrice": 0
             },
             {
