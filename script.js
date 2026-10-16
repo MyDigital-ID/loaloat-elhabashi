@@ -209,6 +209,7 @@
   // ============================================================
   // Splash
   // ============================================================
+  // بترجّع Promise بيتحقق لما الفيديو يخلص (أو يفشل/يتعذر تشغيله)
   function initSplash() {
     const splash = $('splashScreen');
     const video = $('splashVideo');
@@ -226,10 +227,12 @@
         resolve();
       };
 
+      // لو الفيديو ماابتداش خالص (نت ضعيف / منع تشغيل) نكمل بعد 8 ثواني
       timer = setTimeout(settle, 8000);
 
       video.addEventListener('playing', () => {
         video.classList.add('playing');
+        // لو الفيديو وقف في النص لأي سبب، نكمل بعد مدته + 4 ثواني
         clearTimeout(timer);
         const ms = ((isFinite(video.duration) && video.duration) ? video.duration : 4) * 1000 + 4000;
         timer = setTimeout(settle, ms);
@@ -238,9 +241,11 @@
       video.addEventListener('ended', settle, { once: true });
       video.addEventListener('error', settle, { once: true });
 
+      // لو المتصفح منع التشغيل التلقائي، مفيش معنى نستنى
       const p = video.play();
       if (p && p.catch) p.catch(settle);
 
+      // نسخة الخلفية المغبّشة — زخرفة بس، فشلها مايأثرش
       if (bgVideo) {
         const bp = bgVideo.play();
         if (bp && bp.catch) bp.catch(() => {});
@@ -261,8 +266,7 @@
       });
     }, 1000);
     splashFinished = true;
-    // استنى 2.5 ثانية بعد الـ splash قبل ما نظهر رسالة التثبيت
-    setTimeout(maybeShowInstall, 2500);
+    setTimeout(maybeShowInstall, 700);
   }
 
   // ============================================================
@@ -279,6 +283,7 @@
     `).join('');
 
     if (typeof Swiper === 'undefined') {
+      // المكتبة مش متاحة (أوفلاين أول مرة) — نعرض الصور كشريط سحب بسيط
       $('featuredSlider')?.classList.add('no-swiper');
       return;
     }
@@ -563,6 +568,7 @@
       const prod = cat.products.find(p => p.id === prodId);
       if (!prod) return;
 
+      // درجات البن
       card.querySelectorAll('.pc-roast-chip').forEach(chip => {
         chip.onclick = () => {
           card.querySelectorAll('.pc-roast-chip').forEach(c => c.classList.remove('active'));
@@ -574,6 +580,7 @@
         };
       });
 
+      // خيارات التعبئة
       card.querySelectorAll('.pc-size-btn').forEach(btn => {
         btn.onclick = () => {
           card.querySelectorAll('.pc-size-btn').forEach(b => b.classList.remove('selected'));
@@ -597,6 +604,7 @@
         };
       });
 
+      // خيارات العبوة
       card.querySelectorAll('.pc-packing-chip').forEach(chip => {
         chip.onclick = () => {
           card.querySelectorAll('.pc-packing-chip').forEach(c => c.classList.remove('active'));
@@ -606,6 +614,7 @@
         };
       });
 
+      // Gallery dots
       card.querySelectorAll('.pc-g-dot').forEach((dot, i) => {
         dot.onclick = () => {
           const img = card.querySelector('.pc-img');
@@ -615,6 +624,7 @@
         };
       });
 
+      // Add to cart
       const addBtn = card.querySelector('.pc-add-btn');
       if (addBtn) {
         addBtn.onclick = () => {
@@ -910,6 +920,7 @@
         e.preventDefault();
         const nav = link.dataset.nav;
 
+        // "فروعنا" بتفتح/تقفل القايمة الفرعية جوه القائمة الجانبية (من غير ما نقفل القائمة)
         if (nav === 'branches') {
           toggleBranches();
           return;
@@ -953,7 +964,7 @@
   }
 
   // ============================================================
-  // تثبيت التطبيق (PWA install prompt)
+  // تثبيت التطبيق (PWA install prompt) — بيظهر في كل مرة تتفتح فيها الصفحة
   // ============================================================
   function isStandalone() {
     return window.matchMedia('(display-mode: standalone)').matches ||
@@ -965,38 +976,53 @@
            (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   }
 
+  function isAndroid() {
+    return /android/i.test(navigator.userAgent);
+  }
+
   function maybeShowInstall() {
     const banner = $('installBanner');
     if (!banner || !splashFinished || isStandalone()) return;
 
-    // استنى شوية إضافية عشان لو المتصفح عايز يعرض رسالته يبقى خلص
-    setTimeout(() => {
-      const yes = $('installYes');
-      const hint = $('installHint');
+    const yes = $('installYes');
+    const hint = $('installHint');
 
-      if (deferredInstallPrompt) {
-        if (hint) hint.hidden = true;
-        if (yes) { yes.hidden = false; yes.textContent = 'تثبيت الآن'; }
-      } else if (isIOS()) {
-        if (hint) {
-          hint.hidden = false;
-          hint.textContent = 'اضغط زر المشاركة ⬆️ في المتصفح ثم «إضافة إلى الشاشة الرئيسية»';
-        }
-        if (yes) yes.hidden = true;
-      } else {
-        return;
+    if (deferredInstallPrompt) {
+      if (hint) hint.hidden = true;
+      if (yes) { yes.hidden = false; yes.textContent = 'تثبيت الآن'; }
+    } else if (isIOS()) {
+      // iOS مفيهوش زرار تثبيت برمجي — نعرض الخطوات
+      if (hint) {
+        hint.hidden = false;
+        hint.textContent = 'اضغط زر المشاركة ⬆️ في المتصفح ثم «إضافة إلى الشاشة الرئيسية»';
       }
+      if (yes) yes.hidden = true;
+    } else if (isAndroid()) {
+      // المتصفح لسه ماأعلنش إن التثبيت متاح — نعرض الخطوات اليدوية
+      if (hint) {
+        hint.hidden = false;
+        hint.textContent = 'افتح قائمة المتصفح ⋮ ثم اختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية»';
+      }
+      if (yes) yes.hidden = true;
+    } else {
+      return;
+    }
 
-      banner.hidden = false;
-      requestAnimationFrame(() => banner.classList.add('show'));
-    }, 3000);
+    banner.hidden = false;
+    banner.style.display = 'flex';
+    // نشيل الإزاحة المكتوبة inline عشان الأنيميشن بتاع .show يشتغل
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      banner.style.transform = '';
+      banner.style.opacity = '';
+      banner.classList.add('show');
+    }));
   }
 
   function hideInstall() {
     const banner = $('installBanner');
     if (!banner) return;
     banner.classList.remove('show');
-    setTimeout(() => { banner.hidden = true; }, 350);
+    setTimeout(() => { banner.style.display = 'none'; }, 400);
   }
 
   window.addEventListener('beforeinstallprompt', (e) => {
@@ -1024,11 +1050,12 @@
       }
     });
 
+    // "لاحقاً" بتخفي الرسالة للجلسة دي بس — هترجع تظهر في المرة الجاية
     $('installLater')?.addEventListener('click', hideInstall);
   }
 
   // ============================================================
-  // رسم كل الأقسام
+  // رسم كل الأقسام (بتتنادى أول مرة وكمان لما توصل بيانات أحدث من GitHub)
   // ============================================================
   function renderAll() {
     [renderFeatured, renderBestSellers, renderCategories, renderBranches, renderOffers, renderFooter]
@@ -1041,10 +1068,12 @@
   // تشغيل التطبيق
   // ============================================================
   async function init() {
+    // الـ splash بيشتغل بالتوازي مع تحميل البيانات، والرئيسية بتظهر بس لما الفيديو يخلص
     const splashDone = initSplash();
 
     try {
       SITE = await window.SiteDataLoader.load((fresh) => {
+        // وصلت نسخة أحدث من site-data.json على GitHub → نحدّث العرض تلقائياً
         SITE = fresh;
         renderAll();
         console.log('🔄 Updated from GitHub');

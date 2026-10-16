@@ -78,21 +78,31 @@ function base64ToUtf8(b64) {
   return new TextDecoder().decode(bytes);
 }
 
-function compressImage(file, maxSize = 1400, quality = 0.88) {
+// ضغط + ظبط مقاس الصورة تلقائياً: بتتقص من المنتصف على نسبة الإطار (لو اتحددت)
+// وأطول ضلع فيها بيبقى 1400 بكسل كحد أقصى. بدون أي تدخل من صاحب اللوحة.
+function compressImage(file, ratio = 0, maxSize = 1400, quality = 0.88) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.onload = (e) => {
       const img = new Image();
       img.onload = () => {
-        let w = img.width, h = img.height;
+        // 1) منطقة القص من منتصف الصورة
+        let sx = 0, sy = 0, sw = img.width, sh = img.height;
+        if (ratio > 0) {
+          const current = sw / sh;
+          if (current > ratio) { sw = Math.round(sh * ratio); sx = Math.round((img.width - sw) / 2); }
+          else if (current < ratio) { sh = Math.round(sw / ratio); sy = Math.round((img.height - sh) / 2); }
+        }
+        // 2) تصغير لو أكبر من الحد
+        let w = sw, h = sh;
         if (w > maxSize || h > maxSize) {
-          if (w > h) { h = (maxSize / w) * h; w = maxSize; }
-          else { w = (maxSize / h) * w; h = maxSize; }
+          if (w > h) { h = Math.round((maxSize / w) * h); w = maxSize; }
+          else { w = Math.round((maxSize / h) * w); h = maxSize; }
         }
         const canvas = document.createElement("canvas");
         canvas.width = w; canvas.height = h;
         const ctx = canvas.getContext("2d");
-        ctx.drawImage(img, 0, 0, w, h);
+        ctx.drawImage(img, sx, sy, sw, sh, 0, 0, w, h);
         canvas.toBlob((blob) => {
           const reader2 = new FileReader();
           reader2.onload = () => resolve(reader2.result.split(",")[1]);
@@ -357,7 +367,7 @@ async function saveAll() {
         const file = pendingFeatured[0];
         const ext = (file.name.split(".").pop() || "jpg").toLowerCase();
         const fileName = `featured_${Date.now()}_${Math.random().toString(36).slice(2, 6)}.${ext}`;
-        const b64 = await compressImage(file);
+        const b64 = await compressImage(file, 1.1);
         const url = await uploadImageToGitHub(b64, fileName);
         storeData.featured.push(url);
         pendingFeatured.shift();
@@ -372,7 +382,7 @@ async function saveAll() {
         const file = pendingOffers[offerId];
         const ext = (file.name.split(".").pop() || "jpg").toLowerCase();
         const fileName = `offer_${Date.now()}_${Math.random().toString(36).slice(2, 6)}.${ext}`;
-        const b64 = await compressImage(file);
+        const b64 = await compressImage(file, 1);
         const url = await uploadImageToGitHub(b64, fileName);
         const offer = storeData.offers.find(o => o.id === offerId);
         if (offer) offer.image = url;
@@ -427,7 +437,7 @@ async function uploadAllPendingImages() {
       const file = files[0];
       const ext = (file.name.split(".").pop() || "jpg").toLowerCase();
       const fileName = `${productId}_${Date.now()}_${Math.random().toString(36).slice(2, 6)}.${ext}`;
-      const b64 = await compressImage(file);
+      const b64 = await compressImage(file, 1);
       const url = await uploadImageToGitHub(b64, fileName);
       product.images.push(url);
       files.shift();
@@ -962,7 +972,7 @@ function buildZoneCard(cat, idx) {
     if (!f) return;
     showLoading("جاري رفع صورة القسم...");
     try {
-      const b64 = await compressImage(f);
+      const b64 = await compressImage(f, 4 / 3);
       const ext = (f.name.split(".").pop() || "jpg").toLowerCase();
       const fileName = `cat_${cat.id}_${Date.now()}.${ext}`;
       const url = await uploadImageToGitHub(b64, fileName);
