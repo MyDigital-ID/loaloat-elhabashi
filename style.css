@@ -53,7 +53,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 130px;
 }
 
 html, body {
@@ -582,17 +582,15 @@ body.splash-active {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--pearl-deep);
-  padding: 10px 16px;
+  padding: 0;
   box-shadow: 0 2px 16px rgba(62, 31, 15, 0.05);
 }
 
 .header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 12px;
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
 }
 
 .icon-btn {
@@ -624,36 +622,59 @@ body.splash-active {
   transition: all 0.25s;
 }
 
+/* البانر من الجنب للجانب — والقائمة والسلة فوق طرفيه */
 .brand {
-  flex: 1;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  padding: 6px 16px;
-  transition: all 0.3s;
-  max-width: 340px;
-  margin: 0 auto;
+  border-radius: 0;
+  line-height: 0;
 }
 
-.brand:hover { background: rgba(201, 169, 97, 0.08); }
-.brand:active { transform: scale(0.98); }
+.brand:active { opacity: 0.94; }
 
 .brand-banner {
+  display: block;
   width: 100%;
   height: auto;
-  max-height: 75px;
+  max-height: none;
   object-fit: contain;
-  filter: drop-shadow(0 2px 6px rgba(62, 31, 15, 0.12));
 }
 
-.cart-btn { position: relative; }
+/* زرار القائمة (يمين) وزرار السلة (يسار) فوق البانر */
+.header-row .icon-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(250, 246, 239, 0.82);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(201, 169, 97, 0.55);
+  box-shadow: 0 3px 10px rgba(62, 31, 15, 0.2);
+}
+.header-row .menu-btn { right: 10px; padding: 0; }
+.header-row .cart-btn { left: 10px; }
+.header-row .icon-btn:hover { background: rgba(250, 246, 239, 0.95); }
+.header-row .icon-btn:active { transform: translateY(-50%) scale(0.94); }
+
+/* شاشات كبيرة: البانر ما يتمطش زيادة */
+@media (min-width: 768px) {
+  .brand { display: flex; justify-content: center; padding: 6px 70px; box-sizing: border-box; }
+  .brand-banner { width: auto; max-width: 560px; max-height: 110px; }
+}
+
 
 .cart-count {
   position: absolute;
-  top: 4px;
-  left: 4px;
+  top: -4px;
+  left: -4px;
   background: var(--coffee);
   color: var(--pearl);
   font-size: 0.68rem;
@@ -2117,7 +2138,6 @@ main {
   .cart-drawer { width: 100%; max-width: 100%; }
   .cat-card-ar { font-size: 0.92rem; }
   .bn-btn { padding: 11px 16px; font-size: 0.85rem; gap: 6px; }
-  .brand-banner { max-height: 42px; }
   .footer-banner { max-width: 220px; }
   .branch-card { padding: 22px 20px; }
   .branch-icon { width: 52px; height: 52px; font-size: 1.4rem; }
