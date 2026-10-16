@@ -5,9 +5,18 @@
     "about_ar": "من السبعينات... وإحنا بنصنع توليفة بن ليها أصل. تراث بنحافظ عليه، وجودة بتتكلم عن نفسها في كل فنجان. جرّبها... وسيب الطعم يتكلم.",
     "whatsappNumber": "201220843400",
     "phones": [
-      { "label": "توصيل", "number": "035925141" },
-      { "label": "شكاوى", "number": "01220843400" },
-      { "label": "جملة", "number": "01008640838" }
+      {
+        "label": "توصيل",
+        "number": "035925141"
+      },
+      {
+        "label": "شكاوى",
+        "number": "01220843400"
+      },
+      {
+        "label": "جملة",
+        "number": "01008640838"
+      }
     ],
     "branches": [
       {
@@ -24,25 +33,42 @@
     "workingHours_ar": "يومياً من 9 صباحاً حتى 11 مساءً",
     "rights_ar": "جميع الحقوق محفوظة لمطاحن بن لؤلؤة الحبشي"
   },
-
   "social": {
     "facebook": "https://www.facebook.com/profile.php?id=100063938534827",
     "messenger": "100063938534827",
     "whatsapp": "https://wa.me/201220843400"
   },
-
   "roastLevels": [
-    { "name": "فاتح", "hex": "#D4A574" },
-    { "name": "وسط", "hex": "#8B5A3C" },
-    { "name": "غامق", "hex": "#3E1F0F" }
+    {
+      "name": "فاتح",
+      "hex": "#D4A574"
+    },
+    {
+      "name": "وسط",
+      "hex": "#8B5A3C"
+    },
+    {
+      "name": "غامق",
+      "hex": "#3E1F0F"
+    }
   ],
-
   "packingOptions": [
-    { "id": "kilo", "label": "عبوة كيلو", "icon": "📦" },
-    { "id": "half-half", "label": "نصين", "icon": "📦📦" },
-    { "id": "quarters", "label": "4 أرباع", "icon": "📦📦📦📦" }
+    {
+      "id": "kilo",
+      "label": "عبوة كيلو",
+      "icon": "📦"
+    },
+    {
+      "id": "half-half",
+      "label": "نصين",
+      "icon": "📦📦"
+    },
+    {
+      "id": "quarters",
+      "label": "4 أرباع",
+      "icon": "📦📦📦📦"
+    }
   ],
-
   "featured": [
     "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=900&q=85",
     "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=900&q=85",
@@ -50,10 +76,8 @@
     "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=900&q=85",
     "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=900&q=85",
     "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=900&q=85",
-    "https://images.unsplash.com/photo-1521302200778-33500795e128?w=900&q=85",
     "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=85"
   ],
-
   "offers": [
     {
       "id": "offer_demo_1",
@@ -81,7 +105,6 @@
       "text": "عرض خاص: 3 كيلو توليفة بن تركي سوبر بسعر الكيلوين"
     }
   ],
-
   "categories": [
     {
       "id": "turkish-plain",
@@ -91,7 +114,11 @@
       "homeImg": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=700&q=85",
       "visible": true,
       "isBestSeller": true,
-      "colors": ["فاتح", "وسط", "غامق"],
+      "colors": [
+        "فاتح",
+        "وسط",
+        "غامق"
+      ],
       "products": [
         {
           "id": "tp1",
@@ -102,13 +129,33 @@
             "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=85",
             "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900&q=85"
           ],
-          "colors": ["فاتح", "وسط", "غامق"],
+          "colors": [
+            "فاتح",
+            "وسط",
+            "غامق"
+          ],
           "isBestSeller": true,
           "sizes": [
-            { "label": "تمن", "price": 55, "offerPrice": 0 },
-            { "label": "ربع", "price": 110, "offerPrice": 0 },
-            { "label": "نص", "price": 220, "offerPrice": 0 },
-            { "label": "كيلو", "price": 440, "offerPrice": 0 }
+            {
+              "label": "تمن",
+              "price": 55,
+              "offerPrice": 0
+            },
+            {
+              "label": "ربع",
+              "price": 110,
+              "offerPrice": 0
+            },
+            {
+              "label": "نص",
+              "price": 220,
+              "offerPrice": 0
+            },
+            {
+              "label": "كيلو",
+              "price": 440,
+              "offerPrice": 0
+            }
           ]
         }
       ]
@@ -121,7 +168,11 @@
       "homeImg": "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=700&q=85",
       "visible": true,
       "isBestSeller": true,
-      "colors": ["فاتح", "وسط", "غامق"],
+      "colors": [
+        "فاتح",
+        "وسط",
+        "غامق"
+      ],
       "products": [
         {
           "id": "ts1",
@@ -131,13 +182,33 @@
             "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=900&q=85",
             "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900&q=85"
           ],
-          "colors": ["فاتح", "وسط", "غامق"],
+          "colors": [
+            "فاتح",
+            "وسط",
+            "غامق"
+          ],
           "isBestSeller": true,
           "sizes": [
-            { "label": "تمن", "price": 75, "offerPrice": 0 },
-            { "label": "ربع", "price": 150, "offerPrice": 0 },
-            { "label": "نص", "price": 300, "offerPrice": 0 },
-            { "label": "كيلو", "price": 600, "offerPrice": 0 }
+            {
+              "label": "تمن",
+              "price": 75,
+              "offerPrice": 0
+            },
+            {
+              "label": "ربع",
+              "price": 150,
+              "offerPrice": 0
+            },
+            {
+              "label": "نص",
+              "price": 300,
+              "offerPrice": 0
+            },
+            {
+              "label": "كيلو",
+              "price": 600,
+              "offerPrice": 0
+            }
           ]
         }
       ]
@@ -149,7 +220,11 @@
       "desc_ar": "توليفة محوجة من أجود أنواع حب البن مع الهيل البلدي الأصلي بضمان بن لؤلؤة الحبشي",
       "homeImg": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=700&q=85",
       "visible": true,
-      "colors": ["فاتح", "وسط", "غامق"],
+      "colors": [
+        "فاتح",
+        "وسط",
+        "غامق"
+      ],
       "products": [
         {
           "id": "tm1",
@@ -158,12 +233,32 @@
           "images": [
             "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900&q=85"
           ],
-          "colors": ["فاتح", "وسط", "غامق"],
+          "colors": [
+            "فاتح",
+            "وسط",
+            "غامق"
+          ],
           "sizes": [
-            { "label": "تمن", "price": 62, "offerPrice": 0 },
-            { "label": "ربع", "price": 125, "offerPrice": 0 },
-            { "label": "نص", "price": 250, "offerPrice": 0 },
-            { "label": "كيلو", "price": 500, "offerPrice": 0 }
+            {
+              "label": "تمن",
+              "price": 62,
+              "offerPrice": 0
+            },
+            {
+              "label": "ربع",
+              "price": 125,
+              "offerPrice": 0
+            },
+            {
+              "label": "نص",
+              "price": 250,
+              "offerPrice": 0
+            },
+            {
+              "label": "كيلو",
+              "price": 500,
+              "offerPrice": 0
+            }
           ]
         }
       ]
@@ -175,7 +270,11 @@
       "desc_ar": "توليفة محوجة سوبر من أجود أنواع حب البن مع الهيل البلدي الأصلي بضمان بن لؤلؤة الحبشي",
       "homeImg": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=700&q=85",
       "visible": true,
-      "colors": ["فاتح", "وسط", "غامق"],
+      "colors": [
+        "فاتح",
+        "وسط",
+        "غامق"
+      ],
       "products": [
         {
           "id": "tms1",
@@ -184,12 +283,32 @@
           "images": [
             "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=900&q=85"
           ],
-          "colors": ["فاتح", "وسط", "غامق"],
+          "colors": [
+            "فاتح",
+            "وسط",
+            "غامق"
+          ],
           "sizes": [
-            { "label": "تمن", "price": 82, "offerPrice": 0 },
-            { "label": "ربع", "price": 163, "offerPrice": 0 },
-            { "label": "نص", "price": 325, "offerPrice": 0 },
-            { "label": "كيلو", "price": 650, "offerPrice": 0 }
+            {
+              "label": "تمن",
+              "price": 82,
+              "offerPrice": 0
+            },
+            {
+              "label": "ربع",
+              "price": 163,
+              "offerPrice": 0
+            },
+            {
+              "label": "نص",
+              "price": 325,
+              "offerPrice": 0
+            },
+            {
+              "label": "كيلو",
+              "price": 650,
+              "offerPrice": 0
+            }
           ]
         }
       ]
@@ -201,7 +320,11 @@
       "desc_ar": "توليفة بن تركي بنكهة الشوكولاتة الفاخرة من أجود أنواع حب البن بضمان بن لؤلؤة الحبشي",
       "homeImg": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=700&q=85",
       "visible": true,
-      "colors": ["فاتح", "وسط", "غامق"],
+      "colors": [
+        "فاتح",
+        "وسط",
+        "غامق"
+      ],
       "products": [
         {
           "id": "fc1",
@@ -210,12 +333,32 @@
           "images": [
             "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=900&q=85"
           ],
-          "colors": ["فاتح", "وسط", "غامق"],
+          "colors": [
+            "فاتح",
+            "وسط",
+            "غامق"
+          ],
           "sizes": [
-            { "label": "تمن", "price": 69, "offerPrice": 0 },
-            { "label": "ربع", "price": 138, "offerPrice": 0 },
-            { "label": "نص", "price": 275, "offerPrice": 0 },
-            { "label": "كيلو", "price": 550, "offerPrice": 0 }
+            {
+              "label": "تمن",
+              "price": 69,
+              "offerPrice": 0
+            },
+            {
+              "label": "ربع",
+              "price": 138,
+              "offerPrice": 0
+            },
+            {
+              "label": "نص",
+              "price": 275,
+              "offerPrice": 0
+            },
+            {
+              "label": "كيلو",
+              "price": 550,
+              "offerPrice": 0
+            }
           ]
         }
       ]
@@ -227,7 +370,11 @@
       "desc_ar": "توليفة بن تركي بنكهة البندق الفاخر من أجود أنواع حب البن بضمان بن لؤلؤة الحبشي",
       "homeImg": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=700&q=85",
       "visible": true,
-      "colors": ["فاتح", "وسط", "غامق"],
+      "colors": [
+        "فاتح",
+        "وسط",
+        "غامق"
+      ],
       "products": [
         {
           "id": "fh1",
@@ -236,12 +383,32 @@
           "images": [
             "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=900&q=85"
           ],
-          "colors": ["فاتح", "وسط", "غامق"],
+          "colors": [
+            "فاتح",
+            "وسط",
+            "غامق"
+          ],
           "sizes": [
-            { "label": "تمن", "price": 75, "offerPrice": 0 },
-            { "label": "ربع", "price": 150, "offerPrice": 0 },
-            { "label": "نص", "price": 300, "offerPrice": 0 },
-            { "label": "كيلو", "price": 600, "offerPrice": 0 }
+            {
+              "label": "تمن",
+              "price": 75,
+              "offerPrice": 0
+            },
+            {
+              "label": "ربع",
+              "price": 150,
+              "offerPrice": 0
+            },
+            {
+              "label": "نص",
+              "price": 300,
+              "offerPrice": 0
+            },
+            {
+              "label": "كيلو",
+              "price": 600,
+              "offerPrice": 0
+            }
           ]
         }
       ]
@@ -254,7 +421,10 @@
       "homeImg": "https://images.unsplash.com/photo-1592663527359-0d5f7f7b8b8a?w=700&q=85",
       "visible": true,
       "isBestSeller": true,
-      "colors": ["وسط", "غامق"],
+      "colors": [
+        "وسط",
+        "غامق"
+      ],
       "products": [
         {
           "id": "esp1",
@@ -263,13 +433,32 @@
           "images": [
             "https://images.unsplash.com/photo-1592663527359-0d5f7f7b8b8a?w=900&q=85"
           ],
-          "colors": ["وسط", "غامق"],
+          "colors": [
+            "وسط",
+            "غامق"
+          ],
           "isBestSeller": true,
           "sizes": [
-            { "label": "تمن", "price": 125, "offerPrice": 0 },
-            { "label": "ربع", "price": 250, "offerPrice": 0 },
-            { "label": "نص", "price": 500, "offerPrice": 0 },
-            { "label": "كيلو", "price": 1000, "offerPrice": 0 }
+            {
+              "label": "تمن",
+              "price": 125,
+              "offerPrice": 0
+            },
+            {
+              "label": "ربع",
+              "price": 250,
+              "offerPrice": 0
+            },
+            {
+              "label": "نص",
+              "price": 500,
+              "offerPrice": 0
+            },
+            {
+              "label": "كيلو",
+              "price": 1000,
+              "offerPrice": 0
+            }
           ]
         }
       ]
@@ -281,7 +470,11 @@
       "desc_ar": "توليفة بن تركي بنكهة الفانيليا الفاخرة من أجود أنواع حب البن بضمان بن لؤلؤة الحبشي",
       "homeImg": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=700&q=85",
       "visible": true,
-      "colors": ["فاتح", "وسط", "غامق"],
+      "colors": [
+        "فاتح",
+        "وسط",
+        "غامق"
+      ],
       "products": [
         {
           "id": "fv1",
@@ -290,12 +483,32 @@
           "images": [
             "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=85"
           ],
-          "colors": ["فاتح", "وسط", "غامق"],
+          "colors": [
+            "فاتح",
+            "وسط",
+            "غامق"
+          ],
           "sizes": [
-            { "label": "تمن", "price": 71, "offerPrice": 0 },
-            { "label": "ربع", "price": 143, "offerPrice": 0 },
-            { "label": "نص", "price": 285, "offerPrice": 0 },
-            { "label": "كيلو", "price": 570, "offerPrice": 0 }
+            {
+              "label": "تمن",
+              "price": 71,
+              "offerPrice": 0
+            },
+            {
+              "label": "ربع",
+              "price": 143,
+              "offerPrice": 0
+            },
+            {
+              "label": "نص",
+              "price": 285,
+              "offerPrice": 0
+            },
+            {
+              "label": "كيلو",
+              "price": 570,
+              "offerPrice": 0
+            }
           ]
         }
       ]
@@ -307,7 +520,11 @@
       "desc_ar": "توليفة بن تركي بنكهة الكراميل الفاخر من أجود أنواع حب البن بضمان بن لؤلؤة الحبشي",
       "homeImg": "https://images.unsplash.com/photo-1521302200778-33500795e128?w=700&q=85",
       "visible": true,
-      "colors": ["فاتح", "وسط", "غامق"],
+      "colors": [
+        "فاتح",
+        "وسط",
+        "غامق"
+      ],
       "products": [
         {
           "id": "fcar1",
@@ -316,12 +533,32 @@
           "images": [
             "https://images.unsplash.com/photo-1521302200778-33500795e128?w=900&q=85"
           ],
-          "colors": ["فاتح", "وسط", "غامق"],
+          "colors": [
+            "فاتح",
+            "وسط",
+            "غامق"
+          ],
           "sizes": [
-            { "label": "تمن", "price": 73, "offerPrice": 0 },
-            { "label": "ربع", "price": 145, "offerPrice": 0 },
-            { "label": "نص", "price": 290, "offerPrice": 0 },
-            { "label": "كيلو", "price": 580, "offerPrice": 0 }
+            {
+              "label": "تمن",
+              "price": 73,
+              "offerPrice": 0
+            },
+            {
+              "label": "ربع",
+              "price": 145,
+              "offerPrice": 0
+            },
+            {
+              "label": "نص",
+              "price": 290,
+              "offerPrice": 0
+            },
+            {
+              "label": "كيلو",
+              "price": 580,
+              "offerPrice": 0
+            }
           ]
         }
       ]
@@ -333,7 +570,11 @@
       "desc_ar": "قسم قيد الإنشاء - يمكن تعديله من لوحة التحكم",
       "homeImg": "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=700&q=85",
       "visible": true,
-      "colors": ["فاتح", "وسط", "غامق"],
+      "colors": [
+        "فاتح",
+        "وسط",
+        "غامق"
+      ],
       "products": []
     },
     {
@@ -343,7 +584,11 @@
       "desc_ar": "قسم قيد الإنشاء - يمكن تعديله من لوحة التحكم",
       "homeImg": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=700&q=85",
       "visible": true,
-      "colors": ["فاتح", "وسط", "غامق"],
+      "colors": [
+        "فاتح",
+        "وسط",
+        "غامق"
+      ],
       "products": []
     },
     {
@@ -353,7 +598,11 @@
       "desc_ar": "قسم قيد الإنشاء - يمكن تعديله من لوحة التحكم",
       "homeImg": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=700&q=85",
       "visible": true,
-      "colors": ["فاتح", "وسط", "غامق"],
+      "colors": [
+        "فاتح",
+        "وسط",
+        "غامق"
+      ],
       "products": []
     }
   ]
