@@ -209,7 +209,6 @@
   // ============================================================
   // Splash
   // ============================================================
-  // بترجّع Promise بيتحقق لما الفيديو يخلص (أو يفشل/يتعذر تشغيله)
   function initSplash() {
     const splash = $('splashScreen');
     const video = $('splashVideo');
@@ -227,12 +226,10 @@
         resolve();
       };
 
-      // لو الفيديو ماابتداش خالص (نت ضعيف / منع تشغيل) نكمل بعد 8 ثواني
       timer = setTimeout(settle, 8000);
 
       video.addEventListener('playing', () => {
         video.classList.add('playing');
-        // لو الفيديو وقف في النص لأي سبب، نكمل بعد مدته + 4 ثواني
         clearTimeout(timer);
         const ms = ((isFinite(video.duration) && video.duration) ? video.duration : 4) * 1000 + 4000;
         timer = setTimeout(settle, ms);
@@ -241,11 +238,9 @@
       video.addEventListener('ended', settle, { once: true });
       video.addEventListener('error', settle, { once: true });
 
-      // لو المتصفح منع التشغيل التلقائي، مفيش معنى نستنى
       const p = video.play();
       if (p && p.catch) p.catch(settle);
 
-      // نسخة الخلفية المغبّشة — زخرفة بس، فشلها مايأثرش
       if (bgVideo) {
         const bp = bgVideo.play();
         if (bp && bp.catch) bp.catch(() => {});
@@ -266,7 +261,8 @@
       });
     }, 1000);
     splashFinished = true;
-    setTimeout(maybeShowInstall, 700);
+    // استنى 2.5 ثانية بعد الـ splash قبل ما نظهر رسالة التثبيت
+    setTimeout(maybeShowInstall, 2500);
   }
 
   // ============================================================
@@ -283,7 +279,6 @@
     `).join('');
 
     if (typeof Swiper === 'undefined') {
-      // المكتبة مش متاحة (أوفلاين أول مرة) — نعرض الصور كشريط سحب بسيط
       $('featuredSlider')?.classList.add('no-swiper');
       return;
     }
@@ -568,7 +563,6 @@
       const prod = cat.products.find(p => p.id === prodId);
       if (!prod) return;
 
-      // درجات البن
       card.querySelectorAll('.pc-roast-chip').forEach(chip => {
         chip.onclick = () => {
           card.querySelectorAll('.pc-roast-chip').forEach(c => c.classList.remove('active'));
@@ -580,7 +574,6 @@
         };
       });
 
-      // خيارات التعبئة
       card.querySelectorAll('.pc-size-btn').forEach(btn => {
         btn.onclick = () => {
           card.querySelectorAll('.pc-size-btn').forEach(b => b.classList.remove('selected'));
@@ -604,7 +597,6 @@
         };
       });
 
-      // خيارات العبوة
       card.querySelectorAll('.pc-packing-chip').forEach(chip => {
         chip.onclick = () => {
           card.querySelectorAll('.pc-packing-chip').forEach(c => c.classList.remove('active'));
@@ -614,7 +606,6 @@
         };
       });
 
-      // Gallery dots
       card.querySelectorAll('.pc-g-dot').forEach((dot, i) => {
         dot.onclick = () => {
           const img = card.querySelector('.pc-img');
@@ -624,7 +615,6 @@
         };
       });
 
-      // Add to cart
       const addBtn = card.querySelector('.pc-add-btn');
       if (addBtn) {
         addBtn.onclick = () => {
@@ -920,7 +910,6 @@
         e.preventDefault();
         const nav = link.dataset.nav;
 
-        // "فروعنا" بتفتح/تقفل القايمة الفرعية جوه القائمة الجانبية (من غير ما نقفل القائمة)
         if (nav === 'branches') {
           toggleBranches();
           return;
@@ -964,7 +953,7 @@
   }
 
   // ============================================================
-  // تثبيت التطبيق (PWA install prompt) — بيظهر في كل مرة تتفتح فيها الصفحة
+  // تثبيت التطبيق (PWA install prompt)
   // ============================================================
   function isStandalone() {
     return window.matchMedia('(display-mode: standalone)').matches ||
@@ -980,25 +969,27 @@
     const banner = $('installBanner');
     if (!banner || !splashFinished || isStandalone()) return;
 
-    const yes = $('installYes');
-    const hint = $('installHint');
+    // استنى شوية إضافية عشان لو المتصفح عايز يعرض رسالته يبقى خلص
+    setTimeout(() => {
+      const yes = $('installYes');
+      const hint = $('installHint');
 
-    if (deferredInstallPrompt) {
-      if (hint) hint.hidden = true;
-      if (yes) { yes.hidden = false; yes.textContent = 'تثبيت الآن'; }
-    } else if (isIOS()) {
-      // iOS مفيهوش زرار تثبيت برمجي — نعرض الخطوات
-      if (hint) {
-        hint.hidden = false;
-        hint.textContent = 'اضغط زر المشاركة ⬆️ في المتصفح ثم «إضافة إلى الشاشة الرئيسية»';
+      if (deferredInstallPrompt) {
+        if (hint) hint.hidden = true;
+        if (yes) { yes.hidden = false; yes.textContent = 'تثبيت الآن'; }
+      } else if (isIOS()) {
+        if (hint) {
+          hint.hidden = false;
+          hint.textContent = 'اضغط زر المشاركة ⬆️ في المتصفح ثم «إضافة إلى الشاشة الرئيسية»';
+        }
+        if (yes) yes.hidden = true;
+      } else {
+        return;
       }
-      if (yes) yes.hidden = true;
-    } else {
-      return; // المتصفح لسه ماأعلنش إن التثبيت متاح
-    }
 
-    banner.hidden = false;
-    requestAnimationFrame(() => banner.classList.add('show'));
+      banner.hidden = false;
+      requestAnimationFrame(() => banner.classList.add('show'));
+    }, 3000);
   }
 
   function hideInstall() {
@@ -1033,12 +1024,11 @@
       }
     });
 
-    // "لاحقاً" بتخفي الرسالة للجلسة دي بس — هترجع تظهر في المرة الجاية
     $('installLater')?.addEventListener('click', hideInstall);
   }
 
   // ============================================================
-  // رسم كل الأقسام (بتتنادى أول مرة وكمان لما توصل بيانات أحدث من GitHub)
+  // رسم كل الأقسام
   // ============================================================
   function renderAll() {
     [renderFeatured, renderBestSellers, renderCategories, renderBranches, renderOffers, renderFooter]
@@ -1051,12 +1041,10 @@
   // تشغيل التطبيق
   // ============================================================
   async function init() {
-    // الـ splash بيشتغل بالتوازي مع تحميل البيانات، والرئيسية بتظهر بس لما الفيديو يخلص
     const splashDone = initSplash();
 
     try {
       SITE = await window.SiteDataLoader.load((fresh) => {
-        // وصلت نسخة أحدث من site-data.json على GitHub → نحدّث العرض تلقائياً
         SITE = fresh;
         renderAll();
         console.log('🔄 Updated from GitHub');
